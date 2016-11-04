@@ -2,8 +2,15 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.http import HttpResponseNotFound, HttpResponseServerError
 
-from test_app import views
+import django
+print(django.__version__)
+from distutils.version import StrictVersion
+if StrictVersion(django.__version__) < StrictVersion('1.10'):
+    import warnings
+    from django.utils.deprecation import RemovedInDjango110Warning
+    warnings.filterwarnings(action="ignore", category=RemovedInDjango110Warning)
 
+from test_app import views
 
 handler404 = lambda r: HttpResponseNotFound()
 handler500 = lambda r: HttpResponseServerError()

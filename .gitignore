@@ -1,12 +1,7 @@
 *.py[oc]
 *.swp
-build
-dist
-*.egg-info
+/build
+/dist
 *test.db
-.coverage
-.idea/
-.project
-.pydevproject
-.settings
-docs/_*
+/docs/_*
+/.*

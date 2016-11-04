@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.shortcuts import render_to_response, render
 from django.template import Context, RequestContext
 from django.template.loader import render_to_string
-
 from waffle import flag_is_active
 from waffle.decorators import waffle_flag, waffle_switch
 
@@ -23,12 +22,12 @@ def flag_in_django(request):
         'switch_var': 'switch_var',
         'sample_var': 'sample_var',
     })
-    return render_to_response('django/django.html', context_instance=c)
+    return render_to_response('django/django.html', context=c)
 
 
 def no_request_context(request):
     c = Context({})
-    return render_to_string('django/django_email.html', context_instance=c)
+    return render_to_string('django/django_email.html', context=c)
 
 
 @waffle_switch('foo')

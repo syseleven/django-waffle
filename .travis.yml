@@ -9,6 +9,7 @@ python:
 env:
  - DJANGO_VERSION="1.8"
  - DJANGO_VERSION="1.9"
+ - DJANGO_VERSION="1.10"
 install:
  - pip install -q "Django>=${DJANGO_VERSION},<${DJANGO_VERSION}.99" -r travis.txt
 script: ./run.sh test

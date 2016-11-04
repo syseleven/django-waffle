@@ -14,3 +14,4 @@ a number of ways.
 :License:       BSD; see LICENSE file
 :Issues:        https://github.com/jsocol/django-waffle/issues
 :Documentation: https://waffle.readthedocs.io/
+
